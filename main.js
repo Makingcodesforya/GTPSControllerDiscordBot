@@ -15,7 +15,7 @@ const Discord = require("discord.js");
 const { exec } = require("child_process");
 const kill = require("child_process").exec
 const fs = require('fs')
-const client = new Discord.Client({ intents: Object.values(Discord.Intents.FLAGS).reduce((a, b) => a + b) });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS], partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 const config = require("./config.json");
 const path = require("path");
 const bcrypt = require("bcrypt");
